@@ -16,4 +16,10 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+  Pint:
+    runs-on: self-hosted
+    container:
+      image: php:8.2-fpm-alpine
+    steps:
+      - php -v
 
