@@ -1,5 +1,7 @@
 <form wire:submit="save">
-    <input type="name" wire:model="name">
+    <label>
+        <input type="text" wire:model="name">
+    </label>
     <div>
         @error('name') <span class="error">{{ $message }}</span> @enderror
     </div>
