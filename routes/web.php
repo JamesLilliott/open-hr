@@ -27,5 +27,8 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/employee/create', CreateEmployee::class)->name('dashboard');
+    //Route::get('/employee/create', CreateEmployee::class)->name('dashboard');
+    Route::get('/employee/create', function () {
+        return view('employee.create');
+    })->name('employee.create');
 });
