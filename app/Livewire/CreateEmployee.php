@@ -3,10 +3,12 @@
 namespace App\Livewire;
 
 use App\Models\Employee;
+use Livewire\Attributes\Rule;
 use Livewire\Component;
 
 class CreateEmployee extends Component
 {
+    #[Rule('required')]
     public $name = '';
 
     public function render()
@@ -16,6 +18,8 @@ class CreateEmployee extends Component
 
     public function save()
     {
+        $this->validate();
+
         Employee::create(
             $this->only(['name']),
         );
