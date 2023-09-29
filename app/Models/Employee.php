@@ -9,5 +9,5 @@ class Employee extends Model
 {
     use HasFactory;
 
-    public $fillable = ['name'];
+    public $fillable = ['name',  'date_of_birth', 'start_date', 'user_id'];
 }
