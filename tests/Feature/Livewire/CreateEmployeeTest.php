@@ -28,9 +28,15 @@ it('Creates an Employee', function () {
 
     Livewire::test(CreateEmployee::class)
         ->set('name', $employee->name)
+        ->set('date_of_birth', $employee->date_of_birth)
+        ->set('start_date', $employee->start_date)
+        ->set('user_id', $employee->user_id)
         ->call('save');
 
     $this->assertDatabaseHas($employee->getTable(), [
         'name' => $employee->name,
+        'date_of_birth' => $employee->date_of_birth,
+        'start_date' => $employee->start_date,
+        'user_id' => $employee->user_id,
     ]);
 });
