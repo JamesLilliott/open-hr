@@ -26,7 +26,8 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/employee/create', function () {
-        return view('employee.create');
-    })->name('employee.create');
+    Route::prefix('employee')->group(function () {
+        Route::view('/create', 'employee.create')->name('employee.create');
+        Route::view('/update/{employee}', 'employee.update', ['employee' => 'employee'])->name('employee.update');
+    });
 });

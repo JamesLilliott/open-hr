@@ -5,7 +5,7 @@ namespace App\Livewire\Employee;
 use App\Models\Employee;
 use Livewire\Component;
 
-class Create extends Component
+class Update extends Component
 {
     public EmployeeForm $form;
 
@@ -14,11 +14,16 @@ class Create extends Component
         return view('livewire.employee.form');
     }
 
+    public function mount(Employee $employee)
+    {
+        $this->form->setEmployee($employee);
+    }
+
     public function save()
     {
-        $employee = $this->form->store();
+        $employee = $this->form->update();
 
         return redirect('/dashboard')
-            ->with('status', 'Created Employee ' . $employee->name);
+            ->with('status', 'Updated Employee ' . $employee->name);
     }
 }
