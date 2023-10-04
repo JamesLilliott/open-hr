@@ -18,7 +18,7 @@ class Create extends Component
     {
         $employee = $this->form->store();
 
-        return redirect('/dashboard')
+        return redirect('/employee/')
             ->with('status', 'Created Employee ' . $employee->name);
     }
 }
