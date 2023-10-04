@@ -6,6 +6,7 @@
                 <label for="search">Search</label>
                 <input id="search" wire:model="query" type="text" placeholder="Search...">
                 <button type="submit" class="border-1 border-blue-400 hover:bg-blue-400 bg-blue-300 px-4 py-2">Search</button>
+                <a href="/employee/create" class="border-1 border-blue-400 hover:bg-blue-400 bg-blue-300 px-4 py-2 float-right">Add</a>
             </form>
         </div>
 
@@ -17,9 +18,9 @@
                 <table class="table-auto text-left w-full">
                     <thead>
                         <tr class="border-b border-neutral-200">
-                            <td class="font-bold">Name</td>
-                            <td class="font-bold">Date of Birth</td>
-                            <td class="font-bold">Start Date</td>
+                            <td class="font-bold" wire:click="sort('name')">Name</td>
+                            <td class="font-bold" wire:click="sort('date_of_birth')">Date of Birth</td>
+                            <td class="font-bold" wire:click="sort('start_date')">Start Date</td>
                         </tr>
                     </thead>
                     <tbody>

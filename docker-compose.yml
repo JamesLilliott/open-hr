@@ -23,7 +23,7 @@ services:
             - sail
         depends_on:
             - mysql
-            - redis
+#            - redis
 #            - mailpit
     mysql:
         image: 'mysql/mysql-server:8.0'
