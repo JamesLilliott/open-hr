@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Employee\Index;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Livewire\Livewire;
 
 it('renders successfully', function () {
@@ -14,6 +15,7 @@ it('renders successfully', function () {
 });
 
 it('sees an empty table', function () {
+    \Illuminate\Support\Facades\DB::table('employees')->truncate();
     $this->actingAs(\App\Models\User::factory()->create());
 
     Livewire::test(Index::class)
