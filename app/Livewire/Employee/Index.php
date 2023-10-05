@@ -11,7 +11,9 @@ class Index extends Component
     use WithPagination;
 
     public $query = '';
+
     public $sortField = 'name';
+
     public $sortDirection = 'ASC';
 
     public function sort($field)
@@ -30,12 +32,12 @@ class Index extends Component
         $employeeQuery = Employee::query();
 
         if ($this->query !== '') {
-            $employeeQuery->where('name', 'LIKE', '%' . $this->query . '%');
+            $employeeQuery->where('name', 'LIKE', '%'.$this->query.'%');
         }
         $employeeQuery->orderBy($this->sortField, $this->sortDirection);
 
         return view('livewire.employee.index', [
-            'employees' => $employeeQuery->paginate(2)
+            'employees' => $employeeQuery->paginate(2),
         ]);
     }
 }

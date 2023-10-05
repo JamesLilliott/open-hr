@@ -8,7 +8,7 @@ use Livewire\Form;
 
 class EmployeeForm extends Form
 {
-    public Employee|null $employee;
+    public ?Employee $employee;
 
     #[Rule('required')]
     public $name = '';
