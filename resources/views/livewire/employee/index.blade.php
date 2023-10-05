@@ -3,14 +3,14 @@
 
         <div class="mb-4">
             <form wire:submit="search">
-                <label for="search">Search</label>
-                <input id="search" wire:model="query" type="text" placeholder="Search...">
-                <button type="submit" class="border-1 border-blue-400 hover:bg-blue-400 bg-blue-300 px-4 py-2">Search</button>
-                <a href="/employee/create" class="border-1 border-blue-400 hover:bg-blue-400 bg-blue-300 px-4 py-2 float-right">Add</a>
+                <input id="search" wire:model="query" type="text" placeholder="Search..." class="rounded shadow-sm">
+                <button type="submit" class="border-1 border-blue-400 hover:bg-blue-400 bg-blue-300 px-4 py-2 rounded">Search</button>
+                <a href="/employee/create" class="border-1 border-blue-400 hover:bg-blue-400 bg-blue-300 px-4 py-2 float-right rounded">Add</a>
             </form>
         </div>
 
         <div>
+            <br>
             <div wire:loading>
                 Searching...
             </div>
