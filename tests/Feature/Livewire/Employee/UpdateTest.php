@@ -3,12 +3,12 @@
 it('renders successfully', function () {
     $employee = \App\Models\Employee::factory()->create();
 
-    $this->get('/employee/update/' . $employee->id)
+    $this->get('/employee/update/'.$employee->id)
         ->assertRedirectToRoute('login');
 
     $this->actingAs(\App\Models\User::factory()->create());
 
-    $this->get('/employee/update/' . $employee->id)
+    $this->get('/employee/update/'.$employee->id)
         ->assertSeeLivewire(\App\Livewire\Employee\Update::class);
 });
 

@@ -23,7 +23,7 @@ class Update extends Component
     {
         $employee = $this->form->update();
 
-        return redirect('/dashboard')
-            ->with('status', 'Updated Employee ' . $employee->name);
+        return redirect('/employee/')
+            ->with('status', 'Updated Employee '.$employee->name);
     }
 }

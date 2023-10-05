@@ -2,7 +2,6 @@
 
 namespace App\Livewire\Employee;
 
-use App\Models\Employee;
 use Livewire\Component;
 
 class Create extends Component
@@ -18,7 +17,7 @@ class Create extends Component
     {
         $employee = $this->form->store();
 
-        return redirect('/dashboard')
-            ->with('status', 'Created Employee ' . $employee->name);
+        return redirect('/employee/')
+            ->with('status', 'Created Employee '.$employee->name);
     }
 }
