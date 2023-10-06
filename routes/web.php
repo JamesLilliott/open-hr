@@ -31,4 +31,10 @@ Route::middleware([
         Route::view('/', 'employee.index')->name('employee.index');
         Route::view('/update/{employee}', 'employee.update', ['employee' => 'employee'])->name('employee.update');
     });
+
+    Route::prefix('team')->group(function () {
+//        Route::view('/create', 'employee.create')->name('employee.create');
+        Route::view('/', 'team.index')->name('team.index');
+//        Route::view('/update/{employee}', 'employee.update', ['employee' => 'employee'])->name('employee.update');
+    });
 });
